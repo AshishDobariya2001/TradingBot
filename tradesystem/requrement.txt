@@ -1,0 +1,6 @@
+celery -A tradesystem.celery worker --pool=solo -l info
+
+celery -A tradesystem beat -l info
+
+tradingbot
+ashish123
