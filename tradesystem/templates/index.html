@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+{% block body %}
+
+<section class="crousel_container">
+  <div class="w3-display-container w3-animate-opacity cebterimg">
+    <img src="../static/image/img4.jpg" alt="boat" style="width:100%;min-height:350px;max-height:500px;">
+    <div class="w3-container w3-display-bottomleft w3-margin-bottom">
+      <button onclick="document.getElementById('id01').style.display='block'"
+        class="w3-button w3-xlarge w3-theme w3-hover-green rounded" title="Go To W3.CSS"><a href="/signup"
+          class="text-decoration-none text-light">Ragistration</a></button>
+    </div>
+  </div>
+</section>
+
+<section class="team-mamber">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3 mt-4 mb-4">
+        <h2 class="text-center fw-bold">Our Expert Team</h2>
+        <p class="text-center">Lorem Ipsum is simply dummy text of the printing and typesetting industry</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card-box text-center">
+          <div class="user-pic">
+            <img src="../static/image/user_kanu.jpg" class="img-fluid" alt="User Pic">
+          </div>
+          <h4>Kanu G Patel</h4>
+          <h6>Project Guide</h6>
+          <h6 class="fw-bold">BVM Engineering Collage</h6>
+          <hr>
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <hr> -->
+          <a href="#" class="btn btn-primary">Know More</a>
+        </div>
+        
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-box text-center">
+          <div class="user-pic">
+            <img src="../static/image/user_ashish.png" class="img-fluid" alt="User Pic">
+          </div>
+          <h4>Ashish S. Dobariya</h4>
+          <h6>Full Stack Developer</h6>
+          <h6 class="fw-bold">18IT445</h6>
+          <hr>
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <hr> -->
+          <a href="#" class="btn btn-primary">Know More</a>
+        </div>
+        
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-box text-center">
+          <div class="user-pic">
+            <img src="../static/image/user_mayur.png" class="img-fluid" alt="User Pic">
+          </div>
+          <h4>Mayur G. Jiyani</h4>
+          <h6>Expert Python</h6>
+          <h6 class="fw-bold">18IT446</h6>
+          <hr>
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+          <hr> -->
+          <a href="#" class="btn btn-primary">Know More</a>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="card-box text-center">
+          <div class="user-pic">
+            <img src="../static/image/user_ritul.png" class="img-fluid" alt="User Pic">
+          </div>
+          <h4>Ritul V. Bathani</h4>
+          <h6>Expert Stock Market</h6>
+          <h6 class="fw-bold">18IT447</h6>
+          <hr>
+          <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+          <hr> -->
+          <a href="#" class="btn btn-primary">Know More</a>
+        </div>
+      </div>
+
+      
+      
+    </div>
+  </div>
+    
+</section>
+
+
+
+{% endblock body %}

@@ -1,0 +1,246 @@
+{% extends 'base.html' %}
+
+{% block title %}OrderDetails{% endblock title %}
+
+{% block head %}
+<style>
+  /* #############  */
+  .header-text {
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(61, 129, 185);
+    margin-bottom: 50px;
+    
+
+  }
+
+  .header-text span {
+    font-weight: 800;
+    border-bottom: 2px solid white;
+  }
+
+  /* ######################### */
+  .button {
+    background: #458b8d;
+    color: rgb(15, 13, 13);
+    border: none;
+    position: relative;
+    height: 60px;
+    font-size: 1.6em;
+    padding: 0 2em;
+    cursor: pointer;
+    /* transition:800ms ease all; */
+    outline: none;
+    border: 1px solid rgb(172, 169, 169);
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  .button:hover {
+    background: rgb(15, 14, 14);
+    color: white;
+  }
+
+  .button:before,
+  .button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #141313;
+    /* transition:400ms ease all; */
+  }
+
+  .button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+  }
+
+  .button:hover:before,
+  .button:hover:after {
+    width: 100%;
+    /* transition:800ms ease all; */
+  }
+
+  /* ################## */
+  .order-deatails table {
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  .order-deatails .tbl-header {
+    background-color: rgba(54, 53, 53, 0.884);
+
+  }
+
+  .order-deatails .tbl-content {
+    height: 400px;
+    overflow-x: auto;
+    margin-top: 0px;
+    border: 1px solid rgba(255, 255, 255, 0.884);
+    /* height: auto; */
+  }
+
+  .order-deatails th {
+    padding: 20px 15px;
+    text-align: left;
+    font-weight: 1000;
+    font-size: 14px;
+    color: rgb(12, 9, 9);
+    text-transform: uppercase;
+    background-color: rgb(205, 206, 207);
+    border: 0.5px solid rgb(12, 10, 10);
+  }
+
+  .order-deatails td {
+    padding: 15px;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    border-bottom: solid 1px rgba(255, 255, 255, 0.1);
+    border-right: 2px solid white;
+  }
+
+  /* demo styles */
+  @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,300,700);
+
+  body {
+    /* background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4); */
+    font-family: 'Roboto', sans-serif;
+  }
+
+  section {
+    margin: 50px;
+  }
+
+  /* follow me template */
+
+
+  /* for custom scrollbar for webkit browser*/
+
+  ::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  /* ::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    } 
+    ::-webkit-scrollbar-thumb {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    } */
+</style>
+{% endblock head %}
+
+{% block body %}
+<section class="order-deatails">
+
+  <div>
+    <h1 class="header-text"><span>Trade Book</span></h1>
+    <!-- <form action="/order" method="POST">
+      {% csrf_token %} -->
+    <span><input type="submit" value="Today Order" class="button" data-bs-toggle="modal"
+        data-bs-target="#orderModal"></span>
+    <!-- </form> -->
+    <hr>
+  </div>
+
+
+  <!-- Modal -->
+  <form action="/order" method="POST">
+    {% csrf_token %}
+
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="orderModalLabel">PLACE TODAY ORDER</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                value="{{email}}" disabled>
+              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Date</label>
+              <input type="date" class="form-control" value="{{date}}" id="datePicker" disabled>
+              <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Time</label>
+              <input type="time" name="time" class="form-control" value="{{time}}" id="myTime">
+              <div id="emailHelp" class="form-text"><span class="text-danger">*If you will change time our strategy is
+                  not applicable.</span> </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary">PLACE ORDER</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+
+
+
+
+
+  <div class="tbl-header fw-bold">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>Client ID</th>
+          <th>OrderID</th>
+          <th>tradingsymbol</th>
+          <th>transactiontype</th>
+          <th>quantity</th>
+          <th>Time</th>
+          <th>More Information</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+
+        {% for i in order %}
+        <tr>
+          <td>{{i.broker_username}}</td>
+          <td>{{i.orderId}} </td>
+          <td>{{i.tradingsymbol}}</td>
+          <td>{{i.transactiontype}}</td>
+          <td>{{i.quantity}}</td>
+          <td>{{i.timedate}}</td>
+          <td><button type="button" class="btn btn-info">Know More</button></td>
+        </tr>
+        {% endfor %}
+
+      </tbody>
+    </table>
+  </div>
+</section>
+
+{% endblock body %}
+
+{% block js %}
+<script>
+  document.getElementById('datePicker').valueAsDate = new Date();
+  document.getElementById("myTime").defaultValue = "09:45";
+</script>
+{% endblock js %}
