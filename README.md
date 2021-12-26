@@ -12,15 +12,15 @@ Algorithmic trading (also called automated trading, black-box trading, or algo-t
 
 Django server run
 
-python manage.py runserver
+---------------> python manage.py runserver
 
 Run celery server 
 
-celery -A tradesystem.celery worker --pool=solo -l info
+---------------> celery -A tradesystem.celery worker --pool=solo -l info
 
 Run celery beat server
 
-celery -A tradesystem beat -l info
+---------------> celery -A tradesystem beat -l info
 
 # Abstract 
 
