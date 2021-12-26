@@ -1,13 +1,22 @@
 # TradingBot
 Algorithmic trading (also called automated trading, black-box trading, or algo-trading) uses a computer program that follows a defined set of instructions (an algorithm) to place a trade.
 
-# Django server run 
+# Required library
+1. pip install pandas
+2. pip install smartapi-python
+3. pip install websocket
+4. pip install celery
+5. pip install django_celery_results
+6. pip install django_celery_beat
+7. pip install requests
+
+Django server run 
 python manage.py runserver
 
-# Run celery server 
+Run celery server 
 celery -A tradesystem.celery worker --pool=solo -l info
 
-# Run celery beat server
+Run celery beat server
 celery -A tradesystem beat -l info
 
 # Abstract 
