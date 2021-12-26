@@ -31,11 +31,11 @@ innovation has escaped discussion within the Information Systems research commun
 
 # INDEX
 1. Introduction 
-1.1. Brief overview of the work…………………………………………..............7 
-1.2. Objectives……………………………………………...…………………….7 
-1.3. Scope……...……………………………………………………....................7 
-1.4. Project Modules……………………………………...………………….…...8 
-1.5. Project Hardware/Software Requirements………………………………….10 
+1.3.1. Brief overview of the work………………………………………….............. 
+1.4.2. Objectives……………………………………………...…………………….
+1.5.3. Scope……...……………………………………………………....................7 
+1.6.4. Project Modules……………………………………...………………….…...8 
+7.5. Project Hardware/Software Requirements………………………………….10 
 
 2. Literature Review
 2.1 Literature Review……………...………………………………….…….......11 
